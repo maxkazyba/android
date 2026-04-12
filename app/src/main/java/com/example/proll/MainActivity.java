@@ -4,15 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.contract.ActivityResultContract;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.proll.objects.User;
+
+import java.net.DatagramPacket;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,12 +27,18 @@ public class MainActivity extends AppCompatActivity {
         Log.i("logcreate", "onCreate: eeee");
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        Button button2 = findViewById(R.id.button2);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        User user = (User) getIntent().getSerializableExtra("user");
+        if (user != null) {
+            TextView login = findViewById(R.id.login);
+            TextView password = findViewById(R.id.password);
+            login.setText(user.getLogin());
+            password.setText(user.getPassword());
+        }
     }
 
     @Override
@@ -49,30 +60,29 @@ public class MainActivity extends AppCompatActivity {
         Log.i("logstop", "onStop: eeee");
     }
     @Override
-    protected  void onDestroy(){
-        super.onDestroy();
+    protected  void onRestart(){
+        super.onRestart();
         Log.i("logdestr", "onDestroy: eeee");
     }
-    public void onNextActivity(View view) {
-        Intent newact = new Intent(this, MainActivity2.class);
 
-        EditText namet = findViewById(R.id.name);
-        EditText aget = findViewById(R.id.age);
-        EditText groupt = findViewById(R.id.group);
+    public void onMainscreen(View view){
+        EditText logint = findViewById(R.id.login);
+        EditText passw = findViewById(R.id.password);
+        String login = logint.getText().toString();
+        String password = passw.getText().toString();
 
-        String name = namet.getText().toString();
-        int age = Integer.parseInt(aget.getText().toString());
-        String group = groupt.getText().toString();
-
-
-        newact.putExtra("name", name);
-        newact.putExtra("age", age);
-        newact.putExtra("group", group);
-
-        startActivity(newact);
-
-        Toast.makeText(getApplicationContext(), "Perehodim v new activnost",
-                Toast.LENGTH_SHORT).show();
+        if (login.equals("") || password.equals("")) {
+            Toast.makeText(getApplicationContext(), "Вы ввели не все данные",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            User user = new User(login, password);
+            Intent newact = new Intent(this, Mainscreen.class);
+            newact.putExtra("user", user);
+            startActivity(newact);
+        }
     }
-
+    public void onLogin(View view) {
+        Intent newact = new Intent(this, Login.class);
+        startActivity(newact);
+    }
 }

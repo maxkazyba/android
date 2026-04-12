@@ -12,7 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proll">
         <activity
-            android:name=".MainActivity2"
+            android:name=".fragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Main_setting"
+            android:exported="false" />
+        <activity
+            android:name=".Choose_room"
+            android:exported="false" />
+        <activity
+            android:name=".Join_room"
+            android:exported="false" />
+        <activity
+            android:name=".Room_create"
+            android:exported="false" />
+        <activity
+            android:name=".Friends"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".Mainscreen"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
