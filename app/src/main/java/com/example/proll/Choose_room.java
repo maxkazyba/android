@@ -26,9 +26,7 @@ public class Choose_room extends AppCompatActivity {
 
     public void Return (View view){
         Intent intent = new Intent(Choose_room.this, Mainscreen.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-        finish();
     }
 }
 

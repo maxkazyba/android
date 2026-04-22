@@ -12,11 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proll">
         <activity
+            android:name=".Recyclerview3pr"
+            android:exported="false" />
+        <activity
+            android:name=".Cars"
+            android:exported="false" />
+        <activity
+            android:name=".Proglang"
+            android:exported="false" />
+        <activity
+            android:name=".Games"
+            android:exported="false" />
+        <activity
+            android:name=".Practica3"
+            android:exported="false" />
+        <activity
             android:name=".fragmentActivity"
             android:exported="false" />
         <activity
             android:name=".Main_setting"
-            android:exported="false" />
+            android:exported="true"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        </activity>
         <activity
             android:name=".Choose_room"
             android:exported="false" />
@@ -34,7 +52,8 @@
             android:exported="false" />
         <activity
             android:name=".Mainscreen"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

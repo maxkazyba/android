@@ -85,4 +85,14 @@ public class MainActivity extends AppCompatActivity {
         Intent newact = new Intent(this, Login.class);
         startActivity(newact);
     }
+
+    public void onPrac3(View view) {
+        Intent newact = new Intent(this, Practica3.class);
+        startActivity(newact);
+    }
+
+    public void Mainset(View view){
+        Intent newact = new Intent(this, Main_setting.class);
+        startActivity(newact);
+    }
 }

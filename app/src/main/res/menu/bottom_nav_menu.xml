@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mainset"
+        android:icon="@drawable/mainsetting"
+        android:title="Общие"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/profil"
+        android:icon="@drawable/profil"
+        android:title="Профиль"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/educ"
+        android:icon="@drawable/educ"
+        android:title="Обучение"
+        app:showAsAction="never"/>
+</menu>
