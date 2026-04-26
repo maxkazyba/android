@@ -1,5 +1,7 @@
 package com.example.proll;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +23,7 @@ import java.net.DatagramPacket;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,33 +42,66 @@ public class MainActivity extends AppCompatActivity {
             login.setText(user.getLogin());
             password.setText(user.getPassword());
         }
+
+
     }
 
     @Override
-    protected  void onStart(){
+    protected void onStart() {
         super.onStart();
         Log.i("logstart", "onStart: eeee");
     }
+
     @Override
-    protected  void onResume(){
+    protected void onResume() {
         super.onResume();
         Log.i("logresum", "onResume: eeee");
-    }    @Override
-    protected  void onPause(){
+    }
+
+    @Override
+    protected void onPause() {
         super.onPause();
         Log.i("logpause", "onPause: eeee");
-    }    @Override
-    protected  void onStop(){
+    }
+
+    @Override
+    protected void onStop() {
         super.onStop();
         Log.i("logstop", "onStop: eeee");
     }
+
     @Override
-    protected  void onRestart(){
+    protected void onRestart() {
         super.onRestart();
         Log.i("logdestr", "onDestroy: eeee");
     }
 
-    public void onMainscreen(View view){
+    public void onMainscreen(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Подтверждение");
+        builder.setMessage("Вы уверены, что ввели все правильно");
+        builder.setPositiveButton("Да", new
+                DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Onms();
+                        // Обработка подтверждения
+                    }
+                });
+// Установка кнопки "Отмена" и ее обработчика
+        builder.setNegativeButton("Отмена", new
+                DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Обработка отмены действия
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void Onms() {
         EditText logint = findViewById(R.id.login);
         EditText passw = findViewById(R.id.password);
         String login = logint.getText().toString();
@@ -81,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(newact);
         }
     }
+
     public void onLogin(View view) {
         Intent newact = new Intent(this, Login.class);
         startActivity(newact);
@@ -91,8 +128,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(newact);
     }
 
-    public void Mainset(View view){
+    public void Mainset(View view) {
         Intent newact = new Intent(this, Main_setting.class);
+        startActivity(newact);
+    }
+
+    public void onPrac4(View view) {
+        Intent newact = new Intent(this, Practica4.class);
         startActivity(newact);
     }
 }

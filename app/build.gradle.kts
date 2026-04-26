@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+
 android {
     namespace = "com.example.proll"
     compileSdk {
@@ -41,6 +42,8 @@ android {
 }
 
 dependencies {
+    implementation("com.github.bumptech.glide:glide:5.0.7")
+    implementation("androidx.work:work-runtime:2.9.0")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
