@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,7 +12,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Proll">
+        android:theme="@style/Theme.Proll"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Pr522"
+            android:exported="false" />
+        <activity
+            android:name=".Pr52"
+            android:exported="false" />
+        <activity
+            android:name=".Pr5"
+            android:exported="false" />
         <activity
             android:name=".Pr42"
             android:exported="false" />

@@ -84,4 +84,15 @@ public class Practica4 extends AppCompatActivity {
         Intent newact = new Intent(this, Pr42.class);
         startActivity(newact);
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
 }

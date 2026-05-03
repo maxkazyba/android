@@ -35,8 +35,6 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder
         TextView textView;
         ViewHolder(View view) {
             super(view);
-            imag = view.findViewById(R.id.imag);
-            textView = view.findViewById(R.id.item_text);
         }
     }
 }
