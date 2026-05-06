@@ -142,4 +142,9 @@ public class MainActivity extends AppCompatActivity {
         Intent newact = new Intent(this, Pr5.class);
         startActivity(newact);
     }
+
+    public void Pr6(View view) {
+        Intent newact = new Intent(this, Pr6.class);
+        startActivity(newact);
+    }
 }

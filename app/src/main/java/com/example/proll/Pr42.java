@@ -1,6 +1,8 @@
 package com.example.proll;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -56,5 +58,10 @@ public class Pr42 extends AppCompatActivity {
                         }
                     });
         });
+    }
+
+    public void Pr62(View view) {
+        Intent newact = new Intent(this, Pr62.class);
+        startActivity(newact);
     }
 }

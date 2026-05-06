@@ -44,6 +44,7 @@ android {
 dependencies {
     implementation("com.github.bumptech.glide:glide:5.0.7")
     implementation("androidx.work:work-runtime:2.9.0")
+    implementation("com.google.code.gson:gson:2.8.8")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
